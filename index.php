@@ -49,7 +49,7 @@
 	        echo "6 - looking to play";
 	        break;
 	    default:
-	        echo "unknown";
+	        echo $state;
     }
 
 ?>
