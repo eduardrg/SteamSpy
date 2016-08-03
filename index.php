@@ -1,7 +1,7 @@
 <?php
 
 	$service_url = 'http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=8476C3AFEFAAAB4F9E96A21BB1F39D88&steamids=76561198044658071';
-	
+
 	$curl = curl_init($service_url);
 
 	curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
@@ -22,7 +22,7 @@
 	}
 	echo 'Response ok!';
 
-	$state = strrpos(string $decoded, string 'personastate') + 17;
+	$state = strrpos($decoded, 'personastate') + 17;
 	// var_export($decoded->response);
 
 	switch ($state) {
