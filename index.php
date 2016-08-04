@@ -64,7 +64,7 @@
 				        echo "<invalid personastate code>";
 			    }
 
-			    if ($state > 0) {
+			    if (intval($state) > 0) {
 					/*
 					if (notification was sent within the past hour) {
 						dont send;
