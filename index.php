@@ -23,7 +23,7 @@
 
 	echo 'Response ok!';
 
-	$state = substr($decoded, strrpos($decoded, 'personastate') + 17, 1);
+	$state = substr($decoded, strrpos($decoded, 'personastate') + 17, 10);
 
 	echo $state 
 /*
