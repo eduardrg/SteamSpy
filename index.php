@@ -23,9 +23,11 @@
 
 	echo 'Response ok!';
 
-	$state = substr($decoded, strrpos($decoded, 'personastate') + 17, 10);
+	// $state = substr($decoded, strrpos($decoded, 'personastate') + 17, 1);
+	
+	// var_export($decoded->response);
 
-	echo $state 
+	echo $decoded->response->personastate;
 /*
 	switch ($state) {
 	    case 0:
@@ -53,4 +55,5 @@
 	        echo $state;
     }
 */
+
 ?>
