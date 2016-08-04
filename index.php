@@ -2,7 +2,7 @@
 
 	$service_url = 'http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=8476C3AFEFAAAB4F9E96A21BB1F39D88&steamids=76561198044658071&format=json';
 
-	$response = http_get($service_url);
+	// $response = http_get($service_url);
 
 	$curl = curl_init($service_url);
 
