@@ -24,8 +24,9 @@
 	echo 'Response ok!';
 
 	$state = substr($decoded, strrpos($decoded, 'personastate') + 17, 1);
-	var_export($decoded->response);
 
+	echo $state 
+/*
 	switch ($state) {
 	    case 0:
 	        echo "0 - Offline";
@@ -51,5 +52,5 @@
 	    default:
 	        echo $state;
     }
-
+*/
 ?>
