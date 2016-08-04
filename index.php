@@ -8,36 +8,7 @@
 
 	echo $arr_json["response"]["players"][0]["personastate"];
 
-	// $response = http_get($service_url);
-/*
-	$curl = curl_init($service_url);
-
-	curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-	$curl_response = curl_exec($curl);
-
-	if ($curl_response === false) {
-	    $info = curl_getinfo($curl);
-	    curl_close($curl);
-	    die('error occured during curl exec. Additional info: ' . var_export($info));
-	}
-
-	curl_close($curl);
-
-	$decoded = json_decode($curl_response);
-
-	if (isset($decoded->response->status) && $decoded->response->status == 'ERROR') {
-	    die('error occured: ' . $decoded->response->errormessage);
-	}
-
-	echo 'Response ok!';
-*/
-	// $state = substr($decoded, strrpos($decoded, 'personastate') + 17, 1);
-	
-	// var_export($decoded->response);
-
-	// echo $decoded->response->personastate;
-/*
-	switch ($state) {
+	switch ($arr_json["response"]["players"][0]["personastate"]) {
 	    case 0:
 	        echo "0 - Offline";
 	        break;
@@ -62,6 +33,5 @@
 	    default:
 	        echo $state;
     }
-*/
 
 ?>
