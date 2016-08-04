@@ -34,7 +34,9 @@
 
 				$arr_json = json_decode($unparsed_json, true);
 
-				echo $arr_json["response"]["players"][0]["personastate"];
+				echo "<!--".$arr_json["response"]["players"][0]["personastate"]."-->";
+
+				echo $arr_json["response"]["players"][0]["lastlogoff"];
 
 				switch ($arr_json["response"]["players"][0]["personastate"]) {
 				    case 0:
