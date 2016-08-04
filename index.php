@@ -15,6 +15,10 @@
 
 	curl_close($curl);
 
+	print_r($curl_result);
+
+	/*
+
 	$decoded = json_decode($curl_response);
 
 	if (isset($decoded->response->status) && $decoded->response->status == 'ERROR') {
@@ -28,6 +32,8 @@
 	var_export($decoded->response);
 
 	// echo $decoded->response->personastate;
+
+	*/
 /*
 	switch ($state) {
 	    case 0:
