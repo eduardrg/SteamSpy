@@ -34,38 +34,50 @@
 
 				$arr_json = json_decode($unparsed_json, true);
 
-				echo "<!--".$arr_json["response"]["players"][0]["personastate"]."-->";
+				$state = $arr_json["response"]["players"][0]["personastate"];
 
-				echo $arr_json["response"]["players"][0]["lastlogoff"];
+				$state_text = "";
 
 				switch ($arr_json["response"]["players"][0]["personastate"]) {
 				    case 0:
-				        echo "No, he's Offline";
+				        $state_text = "Offline";
 				        break;
 				    case 1:
-				        echo "Yes, he's Online";
+				        $state_text = "Online";
 				        break;
 				    case 2:
-				        echo "Yes, but he's Busy";
+				        $state_text = "Busy";
 				        break;
 				    case 3:
-				        echo "Yes, but he's Away";
+				        $state_text = "Away";
 				        break;
 				    case 4:
-				        echo "Yes, but he's set to Snooze";
+				        $state_text = "Snooze";
 				        break;
 				    case 5:
-				        echo "Yes, and he's looking to trade";
+				        $state_text = "looking to trade";
 				        break;
 				    case 6:
-				        echo "Yes, and he's looking to play";
+				        echo "looking to play";
 				        break;
 				    default:
-				        echo "Invalid personastate code";
+				        echo "<invalid personastate code>";
 			    }
+
+			    if ($state > 0) {
+					/*
+					if (notification was sent within the past hour) {
+						dont send;
+					} else {
+					*/
+						$to = "tablelover1995@outlook.com";
+						$subject = "Finley's ".$state_text." on Steam!";
+						$message = "";
+						mail($to, $subject, $message);
+					// }
+				}
 
 			?>
 		</h2>
-
 	</body>
 </html>
