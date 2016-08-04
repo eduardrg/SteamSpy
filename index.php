@@ -2,8 +2,14 @@
 
 	$service_url = 'http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=8476C3AFEFAAAB4F9E96A21BB1F39D88&steamids=76561198044658071&format=json';
 
-	// $response = http_get($service_url);
+	$unparsed_json = file_get_contents($service_url);
 
+	$arr_json = json_decode($unparsed_json, true);
+
+	echo $arr_json["response"]["players"][0]["personastate"];
+
+	// $response = http_get($service_url);
+/*
 	$curl = curl_init($service_url);
 
 	curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
@@ -24,10 +30,10 @@
 	}
 
 	echo 'Response ok!';
-
+*/
 	// $state = substr($decoded, strrpos($decoded, 'personastate') + 17, 1);
 	
-	var_export($decoded->response);
+	// var_export($decoded->response);
 
 	// echo $decoded->response->personastate;
 /*
