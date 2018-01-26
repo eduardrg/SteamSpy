@@ -25,10 +25,13 @@
 		</style>
 	</head>
 	<body>
-		<h1>Is Finley online?</h1>
+		<h1>Is your friend online?</h1>
 		<h2>
 			<?php
-				$service_url = 'http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=8476C3AFEFAAAB4F9E96A21BB1F39D88&steamids=76561198044658071&format=json';
+			// Fill out with your API key and friend's steam id (not their user/display name)
+				$key = '';
+				$steamids = '';
+				$service_url = "http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=".$key."&steamids=".$steamids."&format=json";
 
 				$unparsed_json = file_get_contents($service_url);
 
@@ -70,8 +73,10 @@
 						dont send;
 					} else {
 					*/
-						$to = "tablelover1995@outlook.com";
-						$subject = "Finley's ".$state_text." on Steam!";
+				    	// fill out your friend's name and your email
+				    		$friendName = "Name"
+						$to = "user@domain.com";
+						$subject = $friendName." is ".$state_text." on Steam!";
 						$message = "";
 						mail($to, $subject, $message);
 					// }
