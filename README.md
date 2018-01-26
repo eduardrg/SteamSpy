@@ -1,3 +1,3 @@
 # bottomless-agar
 
-Tiny app to check whether a particular friend is online on Steam, made for shits and giggles.
+Tiny app that uses the Steam API to check whether a particular friend is online on Steam. Useful if they've blocked you :)
